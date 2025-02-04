@@ -22,7 +22,7 @@ function App() {
 
                       { AuthAPI.is_admin() === 'true' &&
                           <>
-                              <Route path="/summon" element={<SummonForm/>}/>
+                              <Route path="/profile/summon" element={<SummonForm/>}/>
                               <Route path="/profile/account" element={<AccountForm/>}/>
                               <Route path="/profile/work" element={<WorkForm/>}/>
                               <Route path="/profile/study-plan" element={<StudyPlanForn/>}/>

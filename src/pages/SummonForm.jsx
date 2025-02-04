@@ -31,7 +31,7 @@ const SummonForm = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'linear-gradient(135deg, #2C3E50, #4CA1AF)',
+                background: 'linear-gradient(135deg, #1C2E4A, #4A5568)',
                 padding: 3,
             }}
         >

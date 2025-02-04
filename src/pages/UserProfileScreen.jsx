@@ -18,7 +18,7 @@ import {
     LocationOn,
     Person,
     Cake,
-    Home, ExitToApp, Edit, CheckCircle,
+    Home, ExitToApp, Edit, CheckCircle, Send,
 } from '@mui/icons-material';
 import {AuthAPI, UserAPI} from '../api/api';
 import {useLocation, useNavigate} from "react-router-dom";
@@ -96,9 +96,38 @@ const UserProfile = () => {
                 <Typography variant="h4" gutterBottom sx={{fontWeight: 'bold', color: '#1C2E4A'}}>
                     Профиль пользователя
                 </Typography>
+
+                {(userId !== null && user.accounting !== null) &&
+                    <>
+                        <Divider sx={{ my: 2 }} />
+                        <Button
+                            variant="contained"
+                            fullWidth
+                            sx={{
+                                mt: 3,
+                                background: 'linear-gradient(135deg, #1976D2, #64B5F6)', // Синий градиент
+                                color: 'white',
+                                '&:hover': {
+                                    background: 'linear-gradient(135deg, #1565C0, #42A5F5)'
+                                },
+                                fontWeight: 'bold',
+                                borderRadius: 2,
+                                padding: '10px'
+                            }}
+                            endIcon={<Send />} // Измененная иконка
+                            onClick={() => {
+                                navigate("/profile/summon")
+                            }}
+                        >
+                            Отправить повестку
+                        </Button>
+                    </>
+                }
+
                 <List>
                     {renderField('Email', user.email, <Email/>)}
                 </List>
+
                 <Divider sx={{my: 2}}/>
 
                 {/* Accounting */}
